@@ -8,5 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "mihunchik01",
-  "license": "ISC"
+  "license": "ISC",
+  "bin": {
+  "brain-games": "bin/brain-games.js"
+  }
 }
