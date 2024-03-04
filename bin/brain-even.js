@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greeting from './brain-games.js';
 import getRndNum from '../src/rnd.js';
