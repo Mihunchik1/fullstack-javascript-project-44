@@ -6,30 +6,31 @@ import getRndNum from '../src/rnd.js';
 greeting();
 const name = readlineSync.question();
 console.log(`Hello, ${name}!`);
-console.log('What is the result of the expression?');
+console.log('What number is missing in the progression?');
 
 for (let i = 0; i <= 2;) {
-  const arrOperator = ['+', '-', '*'];
-  const rndOperator = Math.floor(Math.random() * arrOperator.length);
-  const operator = arrOperator[rndOperator];
+  const rndArr = [];
 
-  const rnd1 = getRndNum();
-  const rnd2 = getRndNum();
-  let result;
+  const firstNum = getRndNum();
+  rndArr.push(firstNum);
 
-  switch (operator) {
-    case '+':
-      result = rnd1 + rnd2;
-      break;
-    case '-':
-      result = rnd1 - rnd2;
-      break;
-    case '*':
-      result = rnd1 * rnd2;
-      break;
-    default:
+  const step = getRndNum();
+
+  for (let j = 1; j < 10; j += 1) {
+    const nextNum = rndArr[j - 1] + step;
+    rndArr.push(nextNum);
   }
-  console.log(`Questions: ${rnd1} ${operator} ${rnd2}`);
+
+  const copyRndArr = [...rndArr];
+  const rndKey = Math.floor(Math.random() * 10);
+
+  copyRndArr[rndKey] = '..';
+
+  const result = rndArr[rndKey];
+
+  const listArr = copyRndArr.join(' ');
+
+  console.log(`Questions: ${listArr}`);
   const answ = readlineSync.question();
   if (result === Number(answ)) {
     console.log('Correct!');
