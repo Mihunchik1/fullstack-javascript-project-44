@@ -31,6 +31,7 @@ for (let i = 0; i <= 2;) {
   const listArr = copyRndArr.join(' ');
 
   console.log(`Questions: ${listArr}`);
+  console.log('Your answer: ');
   const answ = readlineSync.question();
   if (result === Number(answ)) {
     console.log('Correct!');

@@ -30,6 +30,7 @@ for (let i = 0; i <= 2;) {
     default:
   }
   console.log(`Questions: ${rnd1} ${operator} ${rnd2}`);
+  console.log('Your answer: ');
   const answ = readlineSync.question();
   if (result === Number(answ)) {
     console.log('Correct!');
