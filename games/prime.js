@@ -18,7 +18,7 @@ export default function prime() {
       }
     }
 
-    console.log(`Questions: ${rnd}`);
+    console.log(`Question: ${rnd}`);
     console.log('Your answer: ');
     const answ = readlineSync.question();
     if ((count > 0 && answ === 'no') || (count === 0 && answ === 'yes')) {

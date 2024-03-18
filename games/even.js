@@ -10,7 +10,7 @@ export default function even() {
 
   for (let i = 0; i <= 2;) {
     const rnd = getRndNum();
-    console.log(`Questions: ${rnd}`);
+    console.log(`Question: ${rnd}`);
     console.log('Your answer: ');
     const answ = readlineSync.question();
     if ((rnd % 2 === 0 && answ === 'yes') || (rnd % 2 !== 0 && answ === 'no')) {

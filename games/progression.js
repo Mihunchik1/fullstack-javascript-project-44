@@ -30,7 +30,7 @@ export default function progression() {
 
     const listArr = copyRndArr.join(' ');
 
-    console.log(`Questions: ${listArr}`);
+    console.log(`Question: ${listArr}`);
     console.log('Your answer: ');
     const answ = readlineSync.question();
     if (result === Number(answ)) {

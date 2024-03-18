@@ -29,7 +29,7 @@ export default function calculator() {
         break;
       default:
     }
-    console.log(`Questions: ${rnd1} ${operator} ${rnd2}`);
+    console.log(`Question: ${rnd1} ${operator} ${rnd2}`);
     console.log('Your answer: ');
     const answ = readlineSync.question();
     if (result === Number(answ)) {
