@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import greeting from '../bin/brain-games.js';
+import greeting from '../src/greeting.js';
 import getRndNum from '../src/rnd.js';
 
 export default function calculator() {
