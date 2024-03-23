@@ -5,5 +5,3 @@
 [![asciicast](https://asciinema.org/a/tv34pEQfbfV1Kk3jY7ap1eZVr.svg)](brain-even: https://asciinema.org/a/tv34pEQfbfV1Kk3jY7ap1eZVr) (brain-calc: https://asciinema.org/a/xfNJ8J644GPiCsjd1eiucQicb) (brain-gcd: https://asciinema.org/a/HSnW3RjFnhTPJ0uD0nSC8CK5t) (brain-progression: https://asciinema.org/a/Jm2mV3CE5SX6ryB9YeyXUDMlh) (brain-prime: https://asciinema.org/a/3esY3036qJmv2qRGTwsHMSEyy)
 
 Для скачивания и установки всех необходимых зависимостей необходимо выполнить команду: npm ci. Выполнить в корневой директории проекта.
-
-aoaoaooaoaoaoao
