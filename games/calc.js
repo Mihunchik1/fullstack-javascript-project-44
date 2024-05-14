@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import greeting from '../src/greeting.js';
-import getRndNum from '../src/rnd.js';
+import getRndNum from '../src/getRandomInRange.js';
 
 export default function calculator() {
   greeting();
