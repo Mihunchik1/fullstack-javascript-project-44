@@ -12,12 +12,14 @@ export default function prime() {
     const rnd = getRndNum();
     const halfRnd = Math.ceil(rnd / 2);
     let count = 0;
+    if (rnd === 1) {
+      count = 1;
+    }
     for (let j = 2; j <= halfRnd + 1; j += 1) {
       if (rnd % j === 0) {
         count += 1;
       }
     }
-
     console.log(`Question: ${rnd}`);
     console.log('Your answer: ');
     const answ = readlineSync.question();
