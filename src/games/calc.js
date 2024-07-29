@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import greeting from '../greeting.js';
+import greeting from '../cli.js';
 import getRndNum from '../getRandomInRange.js';
 
 export default function calculator() {
