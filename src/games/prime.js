@@ -6,51 +6,53 @@ export default function prime() {
   greeting();
   const name = readlineSync.question();
   console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  console.log('Answer "yes" if the given number is prime. Otherwise, answer "no".');
 
-  for (let i = 0; i <= 2;) {
+  let i = 0; // Счётчик правильных ответов
+  while (i < 3) { // Играем 3 раунда
     const rnd = getRndNum();
+    console.log(`Question: ${rnd}`);
+    console.log('Your answer: ');
+    const answ = readlineSync.question();
+
+    // Проверка на число 0
     if (rnd === 0) {
-      console.log('Question: 0');
-      console.log('Your answer: ');
-      const answ = readlineSync.question();
       if (answ === 'no') {
         console.log('Correct!');
         i += 1;
       } else {
-        console.log(`no is the wrong answer :(. Let's try again, ${name}!`);
+        console.log(`'no' is the wrong answer :(. Let's try again, ${name}!`);
         break;
       }
+      continue;
+    }
+
+    // Проверка на простоту числа
+    let isPrime = true;
+    if (rnd === 1) {
+      isPrime = false; // 1 не является простым числом
     } else {
-      const halfRnd = Math.ceil(rnd / 2);
-      let count = 0;
-      if (rnd === 1) {
-        count = 1;
-      }
-      for (let j = 2; j <= halfRnd + 1; j += 1) {
+      for (let j = 2; j <= Math.sqrt(rnd); j += 1) {
         if (rnd % j === 0) {
-          count += 1;
+          isPrime = false;
+          break;
         }
       }
-      console.log(`Question: ${rnd}`);
-      console.log('Your answer: ');
-      const answ = readlineSync.question();
-      if ((count > 0 && answ === 'no') || (count === 0 && answ === 'yes')) {
-        console.log('Correct!');
-        i += 1;
-      } else if (count === 0 && answ === 'no') {
-        console.log(`no is the wrong answer :(. Correct answer was "yes". Let's try again, ${name}!`);
-        break;
-      } else if (count > 0 && answ === 'yes') {
-        console.log(`yes is the wrong answer :(. Correct answer was "no". Let's try again, ${name}!`);
-        break;
-      } else {
-        console.log('error!');
-        break;
-      }
-      if (i > 2) {
-        console.log(`Congratulations, ${name}!`);
-      }
+    }
+
+    // Проверка ответа пользователя
+    const correctAnswer = isPrime ? 'yes' : 'no';
+    if (answ === correctAnswer) {
+      console.log('Correct!');
+      i += 1;
+    } else {
+      console.log(`'${answ}' is the wrong answer :(. Correct answer was '${correctAnswer}'. Let's try again, ${name}!`);
+      break;
+    }
+
+    // Проверка на окончание игры
+    if (i >= 3) {
+      console.log(`Congratulations, ${name}!`);
     }
   }
 }
