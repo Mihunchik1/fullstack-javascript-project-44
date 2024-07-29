@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
-import greeting from '../cli.js';
+// import readlineSync from 'readline-sync';
+// import greeting from '../cli.js';
 import getRndNum from '../getRandomInRange.js';
 import runEngine from '../index.js';
 
