@@ -10,7 +10,7 @@ const runEngine = (rules, generateRound) => {
   console.log(rules);
   for (let i = 0; i < roundsCount; i += 1) {
     const [question, answer] = generateRound();
-    console.log(question);
+    console.log(`Question: ${question}`);
     console.log('Your answer: ');
     const userAnswer = readlineSync.question();
     if (userAnswer === answer) {
