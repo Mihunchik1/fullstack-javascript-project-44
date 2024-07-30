@@ -28,7 +28,6 @@ const generateRound = () => {
   result.push(answerNum.toString());
   return result;
 };
-
 export default function calculator() {
   runEngine(rules, generateRound);
 }
