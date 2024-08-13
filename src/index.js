@@ -15,10 +15,10 @@ const runEngine = (rules, generateRound) => {
       console.log('correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'. Let's try again, ${name}!`);
-      break;
+      return;
     }
-    console.log(`Congratulations, ${name}!`);
   }
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default runEngine;
