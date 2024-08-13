@@ -3,24 +3,22 @@ import runEngine from '../index.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
 
+const getGcd = (num1, num2) => {
+  let firstNum = num1;
+  let secondNum = num2;
+  while (secondNum !== 0) {
+    const temp = secondNum;
+    secondNum = firstNum % secondNum;
+    firstNum = temp;
+  }
+  return firstNum.toString();
+};
+
 const generateRound = () => {
-  const result = [];
-  let rnd1 = getRndNum();
-  let rnd2 = getRndNum();
+  const rnd1 = getRndNum();
+  const rnd2 = getRndNum();
   const question = `${rnd1} ${rnd2}`;
-  result.push(question);
-  if (rnd1 === rnd2) {
-    result.push(rnd1.toString());
-  }
-  while (rnd1 !== rnd2) {
-    if (rnd1 > rnd2) {
-      rnd1 -= rnd2;
-    } else {
-      rnd2 -= rnd1;
-    }
-  }
-  result.push(rnd1.toString());
-  return result;
+  return [question, getGcd(rnd1, rnd2)];
 };
 
 export default function gcd() {

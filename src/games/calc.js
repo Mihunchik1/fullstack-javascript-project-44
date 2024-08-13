@@ -3,31 +3,31 @@ import runEngine from '../index.js';
 
 const rules = 'What is the result of the expression?';
 
-const generateRound = () => {
-  const result = [];
+const getRandomOperator = () => {
   const arrOperator = ['+', '-', '*'];
-  const operator = arrOperator[Math.floor(Math.random() * arrOperator.length)];
+  return arrOperator[Math.floor(Math.random() * arrOperator.length)];
+};
 
-  const rnd1 = getRndNum();
-  const rnd2 = getRndNum();
-
-  const questionStr = `${rnd1} ${operator} ${rnd2}`;
-  result.push(questionStr);
-  let answerNum;
+const calculation = (num1, num2, operator) => {
   switch (operator) {
     case '+':
-      answerNum = rnd1 + rnd2;
-      break;
+      return num1 + num2;
     case '-':
-      answerNum = rnd1 - rnd2;
-      break;
+      return num1 - num2;
     case '*':
-      answerNum = rnd1 * rnd2;
-      break;
+      return num1 * num2;
     default:
+      throw new Error(`Invalid operator - ${operator}`);
   }
-  result.push(answerNum.toString());
-  return result;
+};
+
+const generateRound = () => {
+  const rnd1 = getRndNum();
+  const rnd2 = getRndNum();
+  const randomOperator = getRandomOperator();
+  const question = `${rnd1} ${randomOperator} ${rnd2}`;
+  const answer = String(calculation(rnd1, rnd2, randomOperator));
+  return [question, answer];
 };
 
 export default function calculator() {

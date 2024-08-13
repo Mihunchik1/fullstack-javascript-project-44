@@ -3,26 +3,26 @@ import runEngine from '../index.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const generateRound = () => {
-  const result = [];
-  const question = getRndNum();
-  result.push(question);
+const isPrime = (num) => {
   let count = 0;
-  const halfRnd = Math.ceil(question / 2);
-  if (question === 1 || question === 0) {
+  const halfRnd = Math.ceil(num / 2);
+  if (num === 1 || num === 0) {
     count = 1;
   }
   for (let j = 2; j <= halfRnd + 1; j += 1) {
-    if (question % j === 0) {
+    if (num % j === 0) {
       count += 1;
     }
   }
   if (count > 0) {
-    result.push('no');
-  } else {
-    result.push('yes');
+    return 'no';
   }
-  return result;
+  return 'yes';
+};
+
+const generateRound = () => {
+  const question = getRndNum();
+  return [question, isPrime(question)];
 };
 
 export default function prime() {

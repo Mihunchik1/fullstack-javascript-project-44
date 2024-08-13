@@ -3,16 +3,16 @@ import runEngine from '../index.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const generateRound = () => {
-  const result = [];
-  const question = getRndNum();
-  result.push(question);
-  if (question % 2 === 0) {
-    result.push('yes');
-  } else {
-    result.push('no');
+const isEven = (num) => {
+  if (num % 2 === 0) {
+    return 'yes';
   }
-  return result;
+  return 'no';
+};
+
+const generateRound = () => {
+  const question = getRndNum();
+  return [question, isEven(question)];
 };
 
 export default function even() {
