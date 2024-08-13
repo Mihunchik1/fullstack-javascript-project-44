@@ -2,6 +2,7 @@ import getRndNum from '../getRandomInRange.js';
 import runEngine from '../index.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const generateRound = () => {
   const result = [];
   const question = getRndNum();
@@ -23,6 +24,7 @@ const generateRound = () => {
   }
   return result;
 };
+
 export default function prime() {
   runEngine(rules, generateRound);
 }

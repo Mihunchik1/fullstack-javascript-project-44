@@ -2,6 +2,7 @@ import getRndNum from '../getRandomInRange.js';
 import runEngine from '../index.js';
 
 const rules = 'What is the result of the expression?';
+
 const generateRound = () => {
   const result = [];
   const arrOperator = ['+', '-', '*'];
@@ -28,6 +29,7 @@ const generateRound = () => {
   result.push(answerNum.toString());
   return result;
 };
+
 export default function calculator() {
   runEngine(rules, generateRound);
 }

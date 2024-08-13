@@ -2,6 +2,7 @@ import getRndNum from '../getRandomInRange.js';
 import runEngine from '../index.js';
 
 const rules = 'What number is missing in the progression?';
+
 const generateRound = () => {
   const result = [];
   const rndArr = [];
@@ -28,6 +29,7 @@ const generateRound = () => {
   result.push(answer.toString());
   return result;
 };
+
 export default function progression() {
   runEngine(rules, generateRound);
 }

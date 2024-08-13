@@ -2,6 +2,7 @@ import getRndNum from '../getRandomInRange.js';
 import runEngine from '../index.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
+
 const generateRound = () => {
   const result = [];
   let rnd1 = getRndNum();
@@ -21,6 +22,7 @@ const generateRound = () => {
   result.push(rnd1.toString());
   return result;
 };
+
 export default function gcd() {
   runEngine(rules, generateRound);
 }
