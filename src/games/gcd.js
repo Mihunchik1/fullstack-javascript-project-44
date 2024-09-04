@@ -18,7 +18,8 @@ const generateRound = () => {
   const rnd1 = getRndNum();
   const rnd2 = getRndNum();
   const question = `${rnd1} ${rnd2}`;
-  return [question, getGcd(rnd1, rnd2)];
+  const answer = getGcd(rnd1, rnd2);
+  return [question, answer];
 };
 
 export default function gcd() {

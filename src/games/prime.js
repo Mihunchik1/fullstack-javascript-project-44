@@ -15,14 +15,15 @@ const isPrime = (num) => {
     }
   }
   if (count > 0) {
-    return 'no';
+    return false;
   }
-  return 'yes';
+  return true;
 };
 
 const generateRound = () => {
   const question = getRndNum();
-  return [question, isPrime(question)];
+  const answer = isPrime(question) ? 'yes' : 'no';
+  return [question, answer];
 };
 
 export default function prime() {

@@ -3,6 +3,7 @@ import runEngine from '../index.js';
 
 const rules = 'What number is missing in the progression?';
 
+/*
 const getProgression = () => {
   const rndArr = [];
   const firstNum = getRndNum();
@@ -16,9 +17,22 @@ const getProgression = () => {
   }
   return rndArr;
 };
+*/
+
+const generateProgression = (start, step, length) => {
+  const progressionArr = [];
+  for (let i = 0; i < length; i += 1) {
+    progressionArr.push(start + step * i);
+  }
+  return progressionArr;
+};
 
 const generateRound = () => {
-  const rndArr = getProgression();
+  const start = getRndNum();
+  const step = getRndNum();
+  const length = 10;
+
+  const rndArr = generateProgression(start, step, length);
   const copyRndArr = [...rndArr];
   const rndKey = Math.floor(Math.random() * 10);
 
